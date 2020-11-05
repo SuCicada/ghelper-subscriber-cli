@@ -131,7 +131,7 @@ class Subscribe(object):
                 return
 
             os.system("killall v2ray")
-            os.system("/usr/bin/v2ray/v2ray ./config.json &")
+            os.system("v2ray ./config.json &")
 
         elif protocol == "https" or protocol == "http":
             shell = "export http_proxy=%s\n" % sub
