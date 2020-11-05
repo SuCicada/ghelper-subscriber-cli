@@ -134,8 +134,8 @@ class Subscribe(object):
             os.system("v2ray ./config.json &")
 
         elif protocol == "https" or protocol == "http":
-            shell = "export http_proxy=%s\n" % sub
-            shell += "export https_proxy=%s" % sub
+            shell = "export http_proxy=%s://%s\n" % (protocol, sub)
+            shell += "export https_proxy=%s://%s" % (protocol, sub)
             print(shell)
             try:
                 with open(self.__env_conf_pathname, "w") as f:
